@@ -3,10 +3,7 @@
   become: yes
   vars:
     login_host: mysql.kalpanadevops.online
-  vars_prompt:
-  - name: mysql_root_password
-    prompt: please enter MySQL root password
-    private: no
+    mysql_root_password: ExpenseApp@1
   tasks:
   - name: Install MySQL Server
     ansible.builtin.dnf:
