@@ -20,7 +20,6 @@
     ansible.builtin.pip:
       name:
       - PyMySQL
-      - cryptography  # to use password in command line
       executable: pip3.9 # pip3.11 if python version is 3.11
 
   # check password is already setup or not
