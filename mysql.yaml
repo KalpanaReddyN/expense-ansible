@@ -34,6 +34,14 @@
     ansible.builtin.debug:
       msg: "{{ mysql_info }}"
 
+# till the above the we can an error whihc is ignored and tells that uunable to connect to database. so we are setting
+# password and writing the condition like when mysql.info is failed. if it is failed below things runs else continues.
+# 1st time need to setup the password
+
   - name: setup MySQL root password
     ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ mysql_root_password }}"
     when: mysql_info.failed is true
+
+#its a boolean value so used is, for string we can use ==
+
+
